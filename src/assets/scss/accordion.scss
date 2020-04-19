@@ -1,0 +1,31 @@
+$border-color: #dddddd !default;
+$border-radius: 5px !default;
+$padding-h: 1rem !default;
+$padding-v: 1rem !default;
+
+.c-accordion {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  &__content {
+    display: none;
+  }
+
+  .c-accordion__item {
+    border-bottom: 1px solid $border-color;
+    padding: $padding-v $padding-h;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.active {
+      .c-accordion__content {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+  }
+}
