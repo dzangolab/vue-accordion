@@ -14,9 +14,7 @@
           name="title"
           v-bind:index="index"
           v-bind:item="item"
-        >
-          <h3>{{ index + 1 }}. {{ item.title }}</h3>
-        </slot>
+        />
       </template>
 
       <template v-slot:content>
@@ -24,9 +22,7 @@
           name="content"
           v-bind:index="index"
           v-bind:item="item"
-        >
-          <pre>{{ item.content }}</pre>
-        </slot>
+        />
       </template>
     </Item>
   </div>
