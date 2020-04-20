@@ -3,10 +3,8 @@
     <Item
       @accordion:select="onItemSelect"
       :active="state[index]"
-      :content="item.content"
       :index="index"
       :key="index"
-      :title="item.title"
       v-for="(item, index) in items"
     >
       <template v-slot:title>
@@ -14,7 +12,9 @@
           name="title"
           v-bind:index="index"
           v-bind:item="item"
-        />
+        >
+          <h4>{{ item.title }}</h4>
+        </slot>
       </template>
 
       <template v-slot:content>
@@ -22,7 +22,9 @@
           name="content"
           v-bind:index="index"
           v-bind:item="item"
-        />
+        >
+          {{ item.content }}
+        </slot>
       </template>
     </Item>
   </div>
