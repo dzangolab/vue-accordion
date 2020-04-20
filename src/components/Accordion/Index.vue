@@ -10,13 +10,21 @@
       v-for="(item, index) in items"
     >
       <template v-slot:title>
-        <slot name="title" v-bind:item="item">
+        <slot
+          name="title"
+          v-bind:index="index"
+          v-bind:item="item"
+        >
           <h3>{{ index + 1 }}. {{ item.title }}</h3>
         </slot>
       </template>
 
       <template v-slot:content>
-        <slot name="content" v-bind:item="item">
+        <slot
+          name="content"
+          v-bind:index="index"
+          v-bind:item="item"
+        >
           <pre>{{ item.content }}</pre>
         </slot>
       </template>
@@ -50,6 +58,8 @@ export default {
       this.index = index
 
       this.prepareComponent()
+
+      this.$emit('accordion:select', index)
     },
 
     prepareComponent () {
