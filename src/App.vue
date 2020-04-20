@@ -36,12 +36,29 @@
           </template>
         </Accordion>
       </section>
+
+      <section>
+        <h2>Custom toggle</h2>
+
+        <Accordion
+          :items="items"
+        >
+          <template v-slot:toggle="{active}">
+            <font-awesome-icon v-if="active" icon="chevron-up" />
+            <font-awesome-icon v-else icon="chevron-down" />
+          </template>
+        </Accordion>
+      </section>
     </main>
   </div>
 </template>
 
 <script>
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons'
 import Accordion from './components/Accordion/Index'
+
+library.add(faChevronDown, faChevronUp)
 
 export default {
 
