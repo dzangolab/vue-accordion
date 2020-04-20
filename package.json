@@ -15,6 +15,9 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "core-js": "^3.5.0",
     "vue": "^2.6.11"
@@ -39,7 +42,7 @@
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.11"
   },
-  "bugs": "https://github.com/dzangolab/vue-locale-switcher/issues",
+  "bugs": "https://github.com/dzangolab/vue-accordion/issues",
   "files": [
     "dist/*",
     "src/*",

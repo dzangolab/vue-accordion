@@ -2,7 +2,7 @@
   <div class="c-accordion">
     <Item
       @accordion:select="onItemSelect"
-      :active="state[index]"
+      :active="isActive(index)"
       :index="index"
       :key="index"
       v-for="(item, index) in items"
@@ -14,6 +14,16 @@
           v-bind:item="item"
         >
           <h4>{{ item.title }}</h4>
+        </slot>
+      </template>
+
+      <template v-if="showToggle" v-slot:toggle>
+        <slot
+          name="toggle"
+          v-bind:active="isActive(index)"
+        >
+          <ChevronUp v-if="isActive(index)" />
+          <ChevronDown v-else />
         </slot>
       </template>
 
@@ -31,12 +41,16 @@
 </template>
 
 <script>
+import ChevronDown from './ChevronDown'
+import ChevronUp from './ChevronUp'
 import Item from './Item'
 
 import '@/assets/scss/accordion.scss'
 
 export default {
   components: {
+    ChevronDown,
+    ChevronUp,
     Item
   },
 
@@ -52,8 +66,16 @@ export default {
   },
 
   methods: {
+    isActive (index) {
+      return !!this.state[index]
+    },
+
     onItemSelect (index) {
-      this.index = index
+      if (!this.state[index]) {
+        this.index = index
+      } else {
+        this.index = null
+      }
 
       this.prepareComponent()
 
@@ -75,6 +97,10 @@ export default {
     items: {
       default: () => [],
       type: Array
+    },
+    showToggle: {
+      default: true,
+      type: Boolean
     }
   }
 }
