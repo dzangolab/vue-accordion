@@ -42,7 +42,7 @@
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.11"
   },
-  "bugs": "https://github.com/dzangolab/vue-locale-switcher/issues",
+  "bugs": "https://github.com/dzangolab/vue-accordion/issues",
   "files": [
     "dist/*",
     "src/*",
