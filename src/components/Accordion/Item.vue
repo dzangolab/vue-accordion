@@ -8,6 +8,7 @@
       class="c-accordion__title"
     >
       <slot name="title" />
+      <slot name="toggler" />
     </div>
     <div
       class="c-accordion__content"

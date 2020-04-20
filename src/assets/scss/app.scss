@@ -4,46 +4,7 @@ main {
   padding-top: 20px;
   font-size: 20px;
 
-  .locale {
-    font-weight: bold;
-  }
-
   section {
     margin-top: 2rem;
-
-    .switcher {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-
-      .comment {
-        flex: 1;
-      }
-
-      .ls {
-        display: block;
-        flex: 0;
-        width: 100%;
-
-        &__dropdown {
-          border-top: none;
-          position: static;
-          width: 100%;
-        }
-      }
-
-      @media (min-width: 992px) {
-        flex-direction: row;
-        justify-content: space-between;
-
-        .ls {
-          &__dropdown {
-            position: absolute;
-            width: auto;
-          }
-        }
-      }
-    }
   }
 }

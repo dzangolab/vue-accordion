@@ -2,7 +2,7 @@
   <div class="c-accordion">
     <Item
       @accordion:select="onItemSelect"
-      :active="state[index]"
+      :active="isActive(index)"
       :index="index"
       :key="index"
       v-for="(item, index) in items"
@@ -15,6 +15,13 @@
         >
           <h4>{{ item.title }}</h4>
         </slot>
+      </template>
+
+      <template v-slot:toggler>
+        <slot
+          name="toggler"
+          v-bind:active="isActive(index)"
+        />
       </template>
 
       <template v-slot:content>
@@ -52,8 +59,16 @@ export default {
   },
 
   methods: {
+    isActive (index) {
+      return !!this.state[index]
+    },
+
     onItemSelect (index) {
-      this.index = index
+      if (!this.state[index]) {
+        this.index = index
+      } else {
+        this.index = null
+      }
 
       this.prepareComponent()
 

@@ -27,5 +27,8 @@ $padding-v: 1rem !default;
   }
 
   &__title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
   }
 }
