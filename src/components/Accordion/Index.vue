@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       index: 0,
-      state: [],
+      state: []
     }
   },
 
@@ -71,7 +71,7 @@ export default {
 
   props: {
     items: {
-      default: [],
+      default: () => [],
       type: Array
     }
   }
