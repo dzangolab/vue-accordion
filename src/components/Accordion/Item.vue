@@ -29,7 +29,6 @@
 export default {
   methods: {
     onClick () {
-      console.log(this.index)
       this.$emit('accordion:select', this.index)
     }
   },

@@ -16,7 +16,9 @@
       </template>
 
       <template v-slot:content>
-        <pre>{{ item.content }}</pre>
+        <slot name="content" v-bind:item="item">
+          <pre>{{ item.content }}</pre>
+        </slot>
       </template>
     </Item>
   </div>
@@ -45,8 +47,6 @@ export default {
 
   methods: {
     onItemSelect (index) {
-      console.log(index)
-
       this.index = index
 
       this.prepareComponent()
@@ -56,7 +56,7 @@ export default {
       this.state = []
 
       this.items.forEach((item, index) => {
-        this.state.push((index === this.index) ? true : false)
+        this.state.push(index === this.index)
       })
     }
   },
