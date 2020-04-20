@@ -22,7 +22,8 @@
           name="toggle"
           v-bind:active="isActive(index)"
         >
-          <button class="c-accordion__toggle">{{ toggleLabel }}</button>
+          <ChevronUp v-if="isActive(index)" />
+          <ChevronDown v-else />
         </slot>
       </template>
 
@@ -40,12 +41,16 @@
 </template>
 
 <script>
+import ChevronDown from './ChevronDown'
+import ChevronUp from './ChevronUp'
 import Item from './Item'
 
 import '@/assets/scss/accordion.scss'
 
 export default {
   components: {
+    ChevronDown,
+    ChevronUp,
     Item
   },
 
@@ -96,10 +101,6 @@ export default {
     showToggle: {
       default: true,
       type: Boolean
-    },
-    toggleLabel: {
-      default: 'Toggle',
-      type: String
     }
   }
 }
