@@ -17,11 +17,13 @@
         </slot>
       </template>
 
-      <template v-slot:toggler>
+      <template v-if="showToggle" v-slot:toggle>
         <slot
-          name="toggler"
+          name="toggle"
           v-bind:active="isActive(index)"
-        />
+        >
+          <button class="c-accordion__toggle">{{ toggleLabel }}</button>
+        </slot>
       </template>
 
       <template v-slot:content>
@@ -90,6 +92,14 @@ export default {
     items: {
       default: () => [],
       type: Array
+    },
+    showToggle: {
+      default: true,
+      type: Boolean
+    },
+    toggleLabel: {
+      default: 'Toggle',
+      type: String
     }
   }
 }
