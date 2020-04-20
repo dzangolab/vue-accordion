@@ -19,8 +19,11 @@
         <Accordion
           :items="items"
         >
-          <template v-slot:title="items">
-            <h4>{{ items.item.title }}</h4>
+          <template v-slot:title="{item}">
+            <h4>{{ item.title }}</h4>
+          </template>
+          <template v-slot:content="{index, item}">
+            <div><span>{{ index + 1 }}.</span> {{ item.content }}</div>
           </template>
         </Accordion>
       </section>

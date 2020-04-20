@@ -7,20 +7,12 @@
       @click="onClick"
       class="c-accordion__title"
     >
-      <slot
-        name="title"
-      >
-        <h4>{{ title }}</h4>
-      </slot>
+      <slot name="title" />
     </div>
     <div
       class="c-accordion__content"
     >
-      <slot
-        name="content"
-      >
-        {{ content }}
-      </slot>
+      <slot name="content" />
     </div>
   </div>
 </template>
@@ -29,7 +21,6 @@
 export default {
   methods: {
     onClick () {
-      console.log(this.index)
       this.$emit('accordion:select', this.index)
     }
   },
@@ -41,17 +32,9 @@ export default {
       default: false,
       type: Boolean
     },
-    content: {
-      required: true,
-      type: String
-    },
     index: {
       required: true,
       type: Number
-    },
-    title: {
-      required: true,
-      type: String
     }
   }
 }
