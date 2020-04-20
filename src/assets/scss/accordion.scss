@@ -1,36 +1,56 @@
-$border-color: #dddddd !default;
-$border-radius: 5px !default;
-$border-width: 1px !default;
+$color-light: #eaf4fa !default;
+$color-dark: #1d5479 !default;
 $padding-h: 1rem !default;
 $padding-v: 1rem !default;
+
+$border-color: $color-dark !default;
+$border-radius: 5px !default;
+
+$item-border-color: $color-dark !default;
+$item-margin: 0 0 0 0 !default;
+
+$title-border-color: $color-light !default;
 
 .c-accordion {
   border: 1px solid $border-color;
   border-radius: $border-radius;
 
   &__content {
+    border-top: 1px solid $color-light;
     display: none;
     padding: $padding-v $padding-h;
   }
 
   .c-accordion__item {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $item-border-color;
+    margin: $item-margin;
 
     &:last-child {
       border-bottom: none;
     }
 
-    &.active {
+    &.-active {
       .c-accordion__content {
         display: block;
+      }
+
+      .c-accordion__title {
+        background-color: $color-light;
+        border-bottom: 1px solid $title-border-color;
+        color: $color-dark;
       }
     }
   }
 
   &__title {
+    border-radius: $border-radius $border-radius 0 0;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     padding: $padding-v $padding-h;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
   }
 }

@@ -61,7 +61,7 @@ export default {
   data () {
     return {
       index: 0,
-      state: []
+      state: [1]
     }
   },
 

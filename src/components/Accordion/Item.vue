@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'active': active }"
+    :class="{ '-active': active }"
     class="c-accordion__item"
   >
     <div

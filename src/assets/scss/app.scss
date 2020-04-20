@@ -13,23 +13,57 @@ main {
   .c-accordion {
     border: none;
 
+    &__content {
+      padding: 1rem 0;
+    }
+
     &__item {
       border: none;
       margin-bottom: 0.5rem;
     }
 
     &__title {
-      border: 1px solid $border-color;
-      color: #1d5479;
+      border: 1px solid #ddd !important;
+      border-radius: 5px;
 
       h4 {
-        margin: 0;
+        font-weight: normal;
       }
     }
 
-    .active {
+    .-active {
       .c-accordion__title {
         background-color: #eaf4fa;
+        border-color: #1d5479 !important;
+        color: #1d5479;
+
+        h4 {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+
+.custom2 {
+  .c-accordion {
+    border: none;
+
+    &__item {
+      border: 1px solid #1d5479;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        border: 1px solid #1d5479;
+      }
+    }
+
+    .-active {
+      .c-accordion__title {
+        background-color: #eaf4fa;
+        color: #1d5479;
       }
     }
   }

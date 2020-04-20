@@ -19,12 +19,11 @@
         <Accordion
           :items="items"
         >
-          <template v-slot:title="{item}">
-            <h4>{{ item.title }}</h4>
+          <template v-slot:title="{index, item}">
+            <h3>{{ index + 1 }}. {{ item.title }}</h3>
           </template>
           <template v-slot:content="{index, item}">
-            <div><span>{{ index + 1 }}.</span> {{ item.content }}</div>
-          </template>
+            <span>{{ index + 1 }}.</span> {{ item.content }}          </template>
         </Accordion>
       </section>
 
@@ -50,9 +49,16 @@
         </Accordion>
       </section>
 
-
       <section class="custom">
         <h2>Custom styling</h2>
+
+        <Accordion
+          :items="items"
+        />
+      </section>
+
+      <section class="custom2">
+        <h2>Custom styling 2</h2>
 
         <Accordion
           :items="items"
@@ -92,6 +98,12 @@ export default {
         }
 
       ]
+    }
+  },
+
+  methods: {
+    getItems () {
+      return this.items
     }
   },
 
