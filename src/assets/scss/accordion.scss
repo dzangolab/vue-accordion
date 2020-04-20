@@ -1,5 +1,6 @@
 $border-color: #dddddd !default;
 $border-radius: 5px !default;
+$border-width: 1px !default;
 $padding-h: 1rem !default;
 $padding-v: 1rem !default;
 
@@ -9,11 +10,11 @@ $padding-v: 1rem !default;
 
   &__content {
     display: none;
+    padding: $padding-v $padding-h;
   }
 
   .c-accordion__item {
     border-bottom: 1px solid $border-color;
-    padding: $padding-v $padding-h;
 
     &:last-child {
       border-bottom: none;
@@ -30,5 +31,6 @@ $padding-v: 1rem !default;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    padding: $padding-v $padding-h;
   }
 }

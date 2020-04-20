@@ -8,3 +8,29 @@ main {
     margin-top: 2rem;
   }
 }
+
+.custom {
+  .c-accordion {
+    border: none;
+
+    &__item {
+      border: none;
+      margin-bottom: 0.5rem;
+    }
+
+    &__title {
+      border: 1px solid $border-color;
+      color: #1d5479;
+
+      h4 {
+        margin: 0;
+      }
+    }
+
+    .active {
+      .c-accordion__title {
+        background-color: #eaf4fa;
+      }
+    }
+  }
+}

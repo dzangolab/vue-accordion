@@ -14,15 +14,6 @@
       </section>
 
       <section>
-        <h2>Without toggle buttons</h2>
-
-        <Accordion
-          :items="items"
-          :show-toggle="false"
-        />
-      </section>
-
-      <section>
         <h2>Slots</h2>
 
         <Accordion
@@ -38,6 +29,15 @@
       </section>
 
       <section>
+        <h2>Without toggle buttons</h2>
+
+        <Accordion
+          :items="items"
+          :show-toggle="false"
+        />
+      </section>
+
+      <section>
         <h2>Custom toggle</h2>
 
         <Accordion
@@ -48,6 +48,15 @@
             <font-awesome-icon v-else icon="chevron-down" />
           </template>
         </Accordion>
+      </section>
+
+
+      <section class="custom">
+        <h2>Custom styling</h2>
+
+        <Accordion
+          :items="items"
+        />
       </section>
     </main>
   </div>
