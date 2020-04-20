@@ -24,22 +24,14 @@ main {
 
     &__title {
       border: 1px solid #ddd !important;
-      border-radius: 5px;
-
-      h4 {
-        font-weight: normal;
-      }
+      border-radius: 0;
     }
 
     .-active {
       .c-accordion__title {
         background-color: #eaf4fa;
-        border-color: #1d5479 !important;
+        border: none !important;
         color: #1d5479;
-
-        h4 {
-          font-weight: bold;
-        }
       }
     }
   }
@@ -58,6 +50,10 @@ main {
       &:last-child {
         border: 1px solid #1d5479;
       }
+    }
+
+    &__title {
+      border-radius: 5px 5px 0 0;
     }
 
     .-active {
