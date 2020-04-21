@@ -1,29 +1,23 @@
-$color-light: #eaf4fa !default;
-$color-dark: #1d5479 !default;
-$padding-h: 1rem !default;
-$padding-v: 1rem !default;
-
-$border-color: $color-dark !default;
-$border-radius: 5px !default;
-
-$item-border-color: $color-dark !default;
-$item-margin: 0 0 0 0 !default;
-
-$title-border-color: $color-light !default;
+$accordion-border-radius: 5px !default;
+$accordion-color-light: #cacaca !default;
+$accordion-color-dark: #898989 !default;
+$accordion-item-margin: 0 0 0 0 !default;
+$accordion-padding-h: 1rem !default;
+$accordion-padding-v: 1rem !default;
 
 .c-accordion {
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 1px solid $accordion-color-dark;
+  border-radius: $accordion-border-radius;
 
   &__content {
-    border-top: 1px solid $color-light;
+    border-top: 1px solid $accordion-color-light;
     display: none;
-    padding: $padding-v $padding-h;
+    padding: $accordion-padding-v $accordion-padding-h;
   }
 
   .c-accordion__item {
-    border-bottom: 1px solid $item-border-color;
-    margin: $item-margin;
+    border-bottom: 1px solid $accordion-color-light;
+    margin: $accordion-item-margin;
 
     &:last-child {
       border-bottom: none;
@@ -35,19 +29,17 @@ $title-border-color: $color-light !default;
       }
 
       .c-accordion__title {
-        background-color: $color-light;
-        border-bottom: 1px solid $title-border-color;
-        color: $color-dark;
+        background-color: $accordion-color-light;
       }
     }
   }
 
   &__title {
-    border-radius: $border-radius $border-radius 0 0;
+    border-radius: $accordion-border-radius $accordion-border-radius 0 0;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    padding: $padding-v $padding-h;
+    padding: $accordion-padding-v $accordion-padding-h;
 
     h1, h2, h3, h4, h5, h6 {
       margin: 0;
