@@ -10,16 +10,27 @@
       <slot name="title" />
       <slot name="toggle" />
     </div>
-    <div
-      class="c-accordion__content"
+    <CollapseTransition
     >
-      <slot name="content" />
-    </div>
+      <div v-show="active">
+        <div
+          class="c-accordion__content"
+        >
+          <slot name="content" />
+        </div>
+      </div>
+    </CollapseTransition>
   </div>
 </template>
 
 <script>
+import CollapseTransition from './CollapseTransition'
+
 export default {
+  components: {
+    CollapseTransition
+  },
+
   methods: {
     onClick () {
       this.$emit('accordion:select', this.index)
