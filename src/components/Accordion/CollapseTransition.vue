@@ -20,7 +20,7 @@ export default {
 
   computed: {
     transitionStyle () {
-      return `height ${this.duration}ms ${this.easing}`
+      return `height ${this.duration}ms ${this.transition}`
     }
   },
 
