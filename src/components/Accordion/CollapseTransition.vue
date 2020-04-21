@@ -25,33 +25,39 @@ export default {
   },
 
   methods: {
-    onAfterLeave (el) {
-      el.style.overflow = ''
-      el.style.transition = ''
-      el.style.height = ''
+    forceRepaint (el) {
+      // eslint-disable-next-line no-unused-expressions
+      getComputedStyle(el).height
     },
 
-    onEnter (el) {
+    computeHeight (el) {
       const visibility = el.style.visibility
       const display = el.style.display
 
       el.style.visibility = 'hidden'
       el.style.display = ''
-      el.style.position = 'absolute'
 
       this.height = el.offsetHeight + 'px'
 
       el.style.visibility = visibility
       el.style.display = display
+    },
+
+    onAfterLeave (el) {
+      el.style.overflow = null
+      el.style.transition = null
+      el.style.height = null
+    },
+
+    onEnter (el) {
+      this.computeHeight(el)
 
       el.style.height = '0'
       el.style.overflow = 'hidden'
-      el.style.position = null
 
       // Force repaint to make sure the
       // animation is triggered correctly.
-      // eslint-disable-next-line no-unused-expressions
-      getComputedStyle(el).height
+      this.forceRepaint(el)
 
       el.style.transition = this.transitionStyle
 
@@ -61,25 +67,14 @@ export default {
     },
 
     onLeave (el) {
-      const visibility = el.style.visibility
-      const display = el.style.display
-
-      el.style.visibility = 'hidden'
-      el.style.display = ''
-
-      this.height = el.offsetHeight + 'px'
-
-      el.style.visibility = visibility
-      el.style.display = display
+      this.computeHeight(el)
 
       el.style.height = this.height
-
       el.style.overflow = 'hidden'
 
       // Force repaint to make sure the
       // animation is triggered correctly.
-      // eslint-disable-next-line no-unused-expressions
-      getComputedStyle(el).height
+      this.forceRepaint(el)
 
       el.style.transition = this.transitionStyle
 
