@@ -23,7 +23,8 @@
             <h3>{{ index + 1 }}. {{ item.title }}</h3>
           </template>
           <template v-slot:content="{index, item}">
-            <span>{{ index + 1 }}.</span> {{ item.content }}          </template>
+            <span>{{ index + 1 }}.</span> {{ item.content }}
+          </template>
         </Accordion>
       </section>
 
@@ -62,6 +63,16 @@
 
         <Accordion
           :items="items"
+        />
+      </section>
+
+      <section class="custom">
+        <h2>Custom transition (transition: 'linear', duration: 800ms)</h2>
+
+        <Accordion
+          :items="items"
+          :duration="800"
+          transition="linear"
         />
       </section>
     </main>
