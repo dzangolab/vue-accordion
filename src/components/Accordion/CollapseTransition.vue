@@ -12,12 +12,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      height: '0'
-    }
-  },
-
   computed: {
     transitionStyle () {
       return `height ${this.duration}ms ${this.transition}`
@@ -31,16 +25,7 @@ export default {
     },
 
     computeHeight (el) {
-      const visibility = el.style.visibility
-      const display = el.style.display
-
-      el.style.visibility = 'hidden'
-      el.style.display = ''
-
-      this.height = el.offsetHeight + 'px'
-
-      el.style.visibility = visibility
-      el.style.display = display
+      return el.offsetHeight + 'px'
     },
 
     onAfterLeave (el) {
@@ -50,7 +35,7 @@ export default {
     },
 
     onEnter (el) {
-      this.computeHeight(el)
+      const height = this.computeHeight(el)
 
       el.style.height = '0'
       el.style.overflow = 'hidden'
@@ -62,14 +47,12 @@ export default {
       el.style.transition = this.transitionStyle
 
       requestAnimationFrame(() => {
-        el.style.height = this.height
+        el.style.height = height
       })
     },
 
     onLeave (el) {
-      this.computeHeight(el)
-
-      el.style.height = this.height
+      el.style.height = this.computeHeight(el)
       el.style.overflow = 'hidden'
 
       // Force repaint to make sure the
