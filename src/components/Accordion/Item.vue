@@ -11,8 +11,13 @@
       <slot name="toggle" />
     </div>
     <CollapseTransition
+      :duration="duration"
+      :transition="transition"
     >
-      <div v-show="active">
+      <div
+        class="c-accordion__body"
+        v-show="active"
+      >
         <div
           class="c-accordion__content"
         >
@@ -44,9 +49,20 @@ export default {
       default: false,
       type: Boolean
     },
+
+    duration: {
+      required: false,
+      type: Number
+    },
+
     index: {
       required: true,
       type: Number
+    },
+
+    transition: {
+      required: false,
+      type: String
     }
   }
 }

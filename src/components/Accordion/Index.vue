@@ -3,8 +3,10 @@
     <Item
       @accordion:select="onItemSelect"
       :active="isActive(index)"
+      :duration="duration"
       :index="index"
       :key="index"
+      :transition="transition"
       v-for="(item, index) in items"
     >
       <template v-slot:title>
@@ -98,9 +100,20 @@ export default {
       default: () => [],
       type: Array
     },
+
     showToggle: {
       default: true,
       type: Boolean
+    },
+
+    duration: {
+      required: false,
+      type: Number
+    },
+
+    transition: {
+      required: false,
+      type: String
     }
   }
 }
