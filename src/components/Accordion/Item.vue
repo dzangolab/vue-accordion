@@ -8,7 +8,9 @@
       class="c-accordion__title"
     >
       <slot name="title" />
-      <slot name="toggle" />
+      <span class="c-accordion__toggle">
+        <slot name="toggle" />
+      </span>
     </div>
     <CollapseTransition
       :duration="duration"
