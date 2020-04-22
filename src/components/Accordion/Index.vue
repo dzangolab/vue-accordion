@@ -81,7 +81,7 @@ export default {
 
       this.prepareComponent()
 
-      this.$emit('accordion:select', index)
+      this.$emit('accordion:select', this.index)
     },
 
     prepareComponent () {
