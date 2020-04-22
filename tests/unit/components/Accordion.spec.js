@@ -95,8 +95,6 @@ describe('Accordion', () => {
 
     await wrapper.find('div[class="c-accordion__title"]').trigger('click')
 
-    console.log(wrapper.emitted()['accordion:select'])
-
     expect(wrapper.emitted()['accordion:select']).toBeTruthy()
   })
 })
