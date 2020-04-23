@@ -9,9 +9,9 @@ describe('AccordionItem', () => {
   const wrapperFactory = ({propsData, scopedSlots} = {}) => {
     return shallowMount(AccordionItem, {
       propsData: {
-        content: content,
-        index: index,
-        title: title,
+        content,
+        index,
+        title,
         ...propsData
       },
       scopedSlots: {
