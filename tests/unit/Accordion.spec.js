@@ -18,6 +18,10 @@ const items = [
 
 ]
 
+const generateRandomIndex = () => {
+  return Math.floor(Math.random() * items.length)
+}
+
 describe('Accordion', () => {
   it('renders accordion items', async () => {
     const wrapper = shallowMount(Accordion, {
@@ -28,7 +32,7 @@ describe('Accordion', () => {
 
     const acccordionItems = await wrapper.findAll(AccordionItem)
 
-    expect(acccordionItems.length).toBe(3)
+    expect(acccordionItems.length).toBe(items.length)
 
     wrapper.destroy()
   })
@@ -43,11 +47,11 @@ describe('Accordion', () => {
       }
     })
 
-    const titles = await wrapper.findAll('div[class="c-accordion__title"]')
+    const index = generateRandomIndex()
 
-    expect(titles.at(0).text()).toEqual('1. Item 1')
-    expect(titles.at(1).text()).toEqual('2. Item 2')
-    expect(titles.at(2).text()).toEqual('3. Item 3')
+    const title = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="title"]')
+
+    expect(title.text()).toEqual(`${index + 1}. ${items[index].title}`)
 
     wrapper.destroy()
   })
@@ -62,11 +66,11 @@ describe('Accordion', () => {
       }
     })
 
-    const contents = await wrapper.findAll('div[class="c-accordion__content"]')
+    const index = generateRandomIndex()
 
-    expect(contents.at(0).text()).toEqual('1. some content')
-    expect(contents.at(1).text()).toEqual('2. some more content')
-    expect(contents.at(2).text()).toEqual('3. some other content')
+    const content = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="content"]')
+
+    expect(content.text()).toEqual(`${index + 1}. ${items[index].content}`)
 
     wrapper.destroy()
   })
@@ -79,9 +83,11 @@ describe('Accordion', () => {
       }
     })
 
-    const toggle = await wrapper.find('span[class="c-accordion__toggle"]')
+    const index = generateRandomIndex()
 
-    expect(toggle.isEmpty()).toBe(true)
+    const toggle = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="toggle"]')
+
+    expect(toggle).toBeTruthy()
 
     wrapper.destroy()
   })
@@ -93,7 +99,11 @@ describe('Accordion', () => {
       }
     })
 
-    await wrapper.find('div[class="c-accordion__title"]').trigger('click')
+    const index = generateRandomIndex()
+
+    await wrapper.find(`[data-el="item-${index}"]`)
+      .find('[data-el="title"]')
+      .trigger('click')
 
     expect(wrapper.emitted()['accordion:select']).toBeTruthy()
   })
