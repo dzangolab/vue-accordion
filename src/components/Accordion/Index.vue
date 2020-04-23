@@ -1,11 +1,15 @@
 <template>
   <div class="c-accordion">
     <Item
-      @accordion:select="onItemSelect"
+      @item:select="onItemSelect"
       :active="isActive(index)"
+      :content="item.content"
+      :data-el="'item-' + index"
       :duration="duration"
       :index="index"
       :key="index"
+      :show-toggle="showToggle"
+      :title="item.title"
       :transition="transition"
       v-for="(item, index) in items"
     >
@@ -14,19 +18,14 @@
           name="title"
           v-bind:index="index"
           v-bind:item="item"
-        >
-          <h4>{{ item.title }}</h4>
-        </slot>
+        />
       </template>
 
-      <template v-if="showToggle" v-slot:toggle>
+      <template v-slot:toggle>
         <slot
           name="toggle"
           v-bind:active="isActive(index)"
-        >
-          <ChevronUp v-if="isActive(index)" />
-          <ChevronDown v-else />
-        </slot>
+        />
       </template>
 
       <template v-slot:content>
@@ -34,25 +33,19 @@
           name="content"
           v-bind:index="index"
           v-bind:item="item"
-        >
-          {{ item.content }}
-        </slot>
+        />
       </template>
     </Item>
   </div>
 </template>
 
 <script>
-import ChevronDown from './ChevronDown'
-import ChevronUp from './ChevronUp'
 import Item from './Item'
 
 import '@/assets/scss/accordion.scss'
 
 export default {
   components: {
-    ChevronDown,
-    ChevronUp,
     Item
   },
 
@@ -81,7 +74,7 @@ export default {
 
       this.prepareComponent()
 
-      this.$emit('accordion:select', index)
+      this.$emit('accordion:select', this.index)
     },
 
     prepareComponent () {
@@ -96,6 +89,11 @@ export default {
   name: 'Accordion',
 
   props: {
+    duration: {
+      required: false,
+      type: Number
+    },
+
     items: {
       default: () => [],
       type: Array
@@ -104,11 +102,6 @@ export default {
     showToggle: {
       default: true,
       type: Boolean
-    },
-
-    duration: {
-      required: false,
-      type: Number
     },
 
     transition: {

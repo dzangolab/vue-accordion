@@ -6,9 +6,21 @@
     <div
       @click="onClick"
       class="c-accordion__title"
+      data-el="title"
     >
-      <slot name="title" />
-      <slot name="toggle" />
+      <slot name="title">
+        <h4>{{ title }}</h4>
+      </slot>
+      <span
+        class="c-accordion__toggle"
+        data-el="toggle"
+        v-if="showToggle"
+      >
+        <slot name="toggle">
+          <ChevronUp v-if="active" />
+          <ChevronDown v-else />
+        </slot>
+      </span>
     </div>
     <CollapseTransition
       :duration="duration"
@@ -16,12 +28,16 @@
     >
       <div
         class="c-accordion__body"
+        data-el="body"
         v-show="active"
       >
         <div
           class="c-accordion__content"
+          data-el="content"
         >
-          <slot name="content" />
+          <slot name="content">
+            {{ content }}
+          </slot>
         </div>
       </div>
     </CollapseTransition>
@@ -29,16 +45,20 @@
 </template>
 
 <script>
+import ChevronDown from './ChevronDown'
+import ChevronUp from './ChevronUp'
 import CollapseTransition from './CollapseTransition'
 
 export default {
   components: {
+    ChevronDown,
+    ChevronUp,
     CollapseTransition
   },
 
   methods: {
     onClick () {
-      this.$emit('accordion:select', this.index)
+      this.$emit('item:select', this.index)
     }
   },
 
@@ -50,6 +70,11 @@ export default {
       type: Boolean
     },
 
+    content: {
+      required: true,
+      type: String
+    },
+
     duration: {
       required: false,
       type: Number
@@ -58,6 +83,16 @@ export default {
     index: {
       required: true,
       type: Number
+    },
+
+    showToggle: {
+      default: true,
+      type: Boolean
+    },
+
+    title: {
+      required: true,
+      type: String
     },
 
     transition: {
