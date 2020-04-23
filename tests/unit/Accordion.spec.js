@@ -75,23 +75,6 @@ describe('Accordion', () => {
     wrapper.destroy()
   })
 
-  it('hides toggle button', async () => {
-    const wrapper = mount(Accordion, {
-      propsData: {
-        items,
-        showToggle: false
-      }
-    })
-
-    const index = generateRandomIndex()
-
-    const toggle = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="toggle"]')
-
-    expect(toggle).toBeTruthy()
-
-    wrapper.destroy()
-  })
-
   it('emits accordion:select event on click accordion item', async () => {
     const wrapper = mount(Accordion, {
       propsData: {
@@ -105,6 +88,8 @@ describe('Accordion', () => {
       .find('[data-el="title"]')
       .trigger('click')
 
-    expect(wrapper.emitted()['accordion:select']).toBeTruthy()
+    expect(wrapper.emitted('accordion:select')).toBeTruthy()
+
+    wrapper.destroy()
   })
 })
