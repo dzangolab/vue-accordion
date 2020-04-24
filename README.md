@@ -12,6 +12,7 @@ An accordion component for vue.js.
 
 ```
 import Accordion from '@dzangolab/vue-accordion'
+import '@dzangolab/vue-accordion/dist/accordion.css' // import stylesheet
 
 Vue.component(Accordion)
 ```
@@ -20,6 +21,7 @@ Vue.component(Accordion)
 
 ```
 import Accordion from '@dzangolab/vue-accordion'
+import '@dzangolab/vue-accordion/dist/accordion.css' // import stylesheet
 
 export default {
   components: {
@@ -56,12 +58,74 @@ Default value: `true`
 
 ### `transition`
 
+It is a transition for opening/closing accordion item. It sets The transition-timing-function css property when opening and closing item
+
+Default value: `ease`
+
 ### `duration`
+
+It is a duration of the transition in millisecond(ms).
+
+Default value: `350`
 
 ## Customization
 
 The Accordion component is designed with minimal styling.
 
-### SCSS variables
+### SCSS
+
+Instead of importing the css file in component or main.js, you can also import scss file into your app scss file.
+
+```
+@import '~@dzangolab/vue-accordion/src/assets/scss/accordion.scss';
+```
+
+## Slots
+vue-accordion provides scoped slots in order to customize the accordion.
+
+### Scoped Slot `title`
+
+```vue
+
+It customize title of accordion.
+
+<Accordion
+  :items="items"
+>
+  <template v-slot:title="{index, item}">
+    <h3>{{ index + 1 }}. {{ item.title }}</h3>
+   </template>
+</Accordion>
+```
 
 
+### Scoped Slot `content`
+
+It customize content of accordion.
+
+
+```vue
+<Accordion
+  :items="items"
+>
+  <template v-slot:content="{index, item}">
+    <pre>{{ item.title }}</pre>
+   </template>
+</Accordion>
+```
+
+### Scoped Slot `toggle`
+
+It customize accordion toggle button/icon.
+
+
+```vue
+<Accordion
+  :items="items"
+>
+  <template v-slot:toggle="{active}">
+    <button v-if="active">collapse</button>
+    <button v-else>expand</button>
+   </template>
+</Accordion>
+```
