@@ -46,11 +46,11 @@ and pass it an `items` prop.
 An Array of standard javascript objects. Each item must have the following properties:
 
 * `title`: the text displayed in the "trigger" element of the accordion item, i.e. the part that is always visible, even when the accordion item is collapsed.
-* `content`: the content displayed in the togglable part of the accordion item, i.e. the part that is visible only when the accordion item is expanded.
+* `content`: the content displayed in the toggleable part of the accordion item, i.e. the part that is visible only when the accordion item is expanded.
 
 ### `showToggle`
 
-A boolean indicating whether a toggle button should be displayed in th =e title or trigger element. Note that the whole title/trigger element is clickable, whether or not the toggle is displayed. The toggle simply acts as a visual clue to the user that the element is expandable/collapsible.
+A boolean indicating whether a toggle button should be displayed in the title or trigger element. Note that the whole title/trigger element is clickable, whether or not the toggle is displayed. The toggle simply acts as a visual clue to the user that the element is expandable/collapsible.
 
 Default value: `true`
 
