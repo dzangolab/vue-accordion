@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   env: {
     node: true
   },
@@ -21,17 +20,46 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  // add your custom rules here
+  root: true,
   rules: {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
-    // allow async-await
-    'generator-star-spacing': 0,
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'object-curly-spacing': ['error', 'never'],
-
-    'vue/no-use-v-if-with-v-for': 0
+    quotes: ['error', 'single'],
+    'sort-keys': ['warn', 'asc', {
+      caseSensitive: false, natural: true
+    }],
+    'vue/html-closing-bracket-newline': ['error', {
+      multiline: 'always',
+      singleline: 'never'
+    }],
+    'vue/html-closing-bracket-spacing': ['error', {
+      endTag: 'never',
+      selfClosingTag: 'always',
+      startTag: 'never'
+    }],
+    'vue/html-indent': ['error', 2, {
+      alignAttributesVertically: true,
+      attribute: 1,
+      baseIndent: 1,
+      closeBracket: 0,
+      ignores: []
+    }],
+    'vue/html-quotes': 'error',
+    'vue/max-attributes-per-line': ['error', {
+      multiline: {
+        allowFirstLine: false,
+        max: 1
+      },
+      singleline: 2
+    }],
+    'vue/mustache-interpolation-spacing': ['error', 'always'],
+    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/no-multi-spaces': ['error', {
+      ignoreProperties: false
+    }],
+    'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
+    'vue/require-default-prop': ['warn'],
+    'vue/require-prop-types': ['warn']
   }
 }
