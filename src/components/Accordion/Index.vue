@@ -2,37 +2,37 @@
   <div class="c-accordion">
     <Item
       @item:select="onItemSelect"
-      :active="isActive(index)"
+      :active="isActive(key)"
       :content="item.content"
-      :data-el="'item-' + index"
+      :data-el="'item-' + key"
       :duration="duration"
-      :index="index"
-      :key="index"
+      :index="key"
+      :key="key"
       :show-toggle="showToggle"
       :title="item.title"
       :transition="transition"
-      v-for="(item, index) in items"
+      v-for="(item, key) in items"
     >
       <template v-slot:title>
         <slot
           name="title"
-          v-bind:index="index"
-          v-bind:item="item"
+          :index="key"
+          :item="item"
         />
       </template>
 
       <template v-slot:toggle>
         <slot
           name="toggle"
-          v-bind:active="isActive(index)"
+          :active="isActive(key)"
         />
       </template>
 
       <template v-slot:content>
         <slot
           name="content"
-          v-bind:index="index"
-          v-bind:item="item"
+          :index="key"
+          :item="item"
         />
       </template>
     </Item>
@@ -90,6 +90,7 @@ export default {
 
   props: {
     duration: {
+      default: 350,
       required: false,
       type: Number
     },
@@ -105,6 +106,7 @@ export default {
     },
 
     transition: {
+      default: 'ease',
       required: false,
       type: String
     }

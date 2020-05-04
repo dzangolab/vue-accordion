@@ -4,8 +4,8 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
+    '@vue/standard',
+    'plugin:vue/strongly-recommended'
   ],
   overrides: [
     {

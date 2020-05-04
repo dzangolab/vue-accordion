@@ -6,7 +6,7 @@
     :duration="duration"
     :name="name"
   >
-    <slot></slot>
+    <slot />
   </transition>
 </template>
 

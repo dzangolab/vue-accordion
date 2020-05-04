@@ -76,6 +76,7 @@ export default {
     },
 
     duration: {
+      default: 350,
       required: false,
       type: Number
     },
@@ -96,6 +97,7 @@ export default {
     },
 
     transition: {
+      default: 'ease',
       required: false,
       type: String
     }
