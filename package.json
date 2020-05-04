@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "vue-cli-service build --target lib --name accordion ./src/components/Accordion/Index.vue",
+    "cm": "git-cz",
     "lint": "vue-cli-service lint",
     "prepublish": "yarn run lint && yarn run test && yarn run build",
     "serve": "vue-cli-service serve",
