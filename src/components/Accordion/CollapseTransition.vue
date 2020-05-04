@@ -19,13 +19,13 @@ export default {
   },
 
   methods: {
+    computeHeight (el) {
+      return el.offsetHeight + 'px'
+    },
+
     forceRepaint (el) {
       // eslint-disable-next-line no-unused-expressions
       getComputedStyle(el).height
-    },
-
-    computeHeight (el) {
-      return el.offsetHeight + 'px'
     },
 
     onAfterLeave (el) {
