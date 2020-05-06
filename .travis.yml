@@ -11,5 +11,6 @@ notifications:
 jobs:
   include:
     - stage: build
+      node_js: lts/*
       script:
         - yarn build
