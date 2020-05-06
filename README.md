@@ -2,6 +2,10 @@
 
 An accordion component for vue.js.
 
+[![Build Status](https://travis-ci.org/dzangolab/vue-accordion.svg?branch=master)](https://travis-ci.org/dzangolab/vue-accordion)
+![NPM](https://img.shields.io/npm/v/@dzangolab/vue-accordion)
+![NPM](https://img.shields.io/npm/l/@dzangolab/vue-accordion)
+
 ## Requirements
 
 * vue.js
