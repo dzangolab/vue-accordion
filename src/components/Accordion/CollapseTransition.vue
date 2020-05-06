@@ -28,6 +28,9 @@ export default {
       getComputedStyle(el).height
     },
 
+    // after-* events are not triggered in the test so ignored this method for coverage purpose.
+    // Bug in the vue-test-utils
+    /* istanbul ignore next */
     onAfterLeave (el) {
       el.style.overflow = null
       el.style.transition = null
