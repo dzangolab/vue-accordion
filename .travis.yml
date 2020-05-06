@@ -12,5 +12,4 @@ jobs:
   include:
     - stage: build
       script:
-        - yarn test
         - yarn build
