@@ -108,7 +108,7 @@ describe('Accordion', () => {
     const title = await wrapper.find('[data-el="item-0"]')
       .find('[data-el="title"]')
 
-    title.trigger('click')
+    await title.trigger('click')
 
     const event = wrapper.emitted('accordion:select')
 
@@ -116,7 +116,7 @@ describe('Accordion', () => {
 
     expect(event[0]).toEqual([null])
 
-    title.trigger('click')
+    await title.trigger('click')
 
     expect(event[1]).toEqual([0])
 
