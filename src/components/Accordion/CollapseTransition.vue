@@ -34,7 +34,7 @@ export default {
       el.style.height = null
     },
 
-    onEnter (el) {
+    onEnter (el, done) {
       const height = this.computeHeight(el)
 
       el.style.height = '0'
@@ -46,12 +46,12 @@ export default {
 
       el.style.transition = this.transitionStyle
 
-      requestAnimationFrame(() => {
-        el.style.height = height
-      })
+      el.style.height = height
+
+      setTimeout(done, this.duration)
     },
 
-    onLeave (el) {
+    onLeave (el, done) {
       el.style.height = this.computeHeight(el)
       el.style.overflow = 'hidden'
 
@@ -61,9 +61,9 @@ export default {
 
       el.style.transition = this.transitionStyle
 
-      requestAnimationFrame(() => {
-        el.style.height = '0'
-      })
+      el.style.height = '0'
+
+      setTimeout(done, this.duration)
     }
   },
 

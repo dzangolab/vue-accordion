@@ -66,11 +66,7 @@ export default {
     },
 
     onItemSelect (index) {
-      if (!this.state[index]) {
-        this.index = index
-      } else {
-        this.index = null
-      }
+      this.index = !this.state[index] ? index : null
 
       this.prepareComponent()
 
