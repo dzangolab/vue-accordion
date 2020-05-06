@@ -7,3 +7,10 @@ cache: yarn
 
 notifications:
   - email: false
+
+jobs:
+  include:
+    - stage: build
+      script:
+        - yarn test
+        - yarn build
