@@ -101,4 +101,25 @@ describe('Accordion', () => {
 
     wrapper.destroy()
   })
+
+  it('toggles first item', async () => {
+    const wrapper = wrapperFactory(false)
+
+    const title = await wrapper.find('[data-el="item-0"]')
+      .find('[data-el="title"]')
+
+    title.trigger('click')
+
+    const event = wrapper.emitted('accordion:select')
+
+    expect(event).toBeTruthy()
+
+    expect(event[0]).toEqual([null])
+
+    title.trigger('click')
+
+    expect(event[1]).toEqual([0])
+
+    wrapper.destroy()
+  })
 })
