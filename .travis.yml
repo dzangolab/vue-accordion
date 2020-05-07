@@ -6,7 +6,7 @@ node_js:
 cache: yarn
 
 notifications:
-  - email: false
+  email: false
 
 jobs:
   include:
@@ -14,3 +14,12 @@ jobs:
       node_js: lts/*
       script:
         - yarn build
+      if: branch != master
+
+    - stage: release
+      node_js: lts/*
+      script:
+        - yarn build
+      after_success:
+        - yarn semantic-release
+      if: branch = master
