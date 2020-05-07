@@ -36,6 +36,16 @@ describe('Accordion', () => {
     return shallow ? shallowMount(Accordion, options) : mount(Accordion, options)
   }
 
+  it('renders 0 accordion items', async () => {
+    const wrapper = shallowMount(Accordion, {})
+
+    const acccordionItems = await wrapper.findAll(AccordionItem)
+
+    expect(acccordionItems.length).toBe(0)
+
+    wrapper.destroy()
+  })
+
   it('renders accordion items', async () => {
     const wrapper = wrapperFactory()
 
@@ -88,6 +98,27 @@ describe('Accordion', () => {
       .trigger('click')
 
     expect(wrapper.emitted('accordion:select')).toBeTruthy()
+
+    wrapper.destroy()
+  })
+
+  it('toggles first item', async () => {
+    const wrapper = wrapperFactory(false)
+
+    const title = await wrapper.find('[data-el="item-0"]')
+      .find('[data-el="title"]')
+
+    await title.trigger('click')
+
+    const event = wrapper.emitted('accordion:select')
+
+    expect(event).toBeTruthy()
+
+    expect(event[0]).toEqual([null])
+
+    await title.trigger('click')
+
+    expect(event[1]).toEqual([0])
 
     wrapper.destroy()
   })
