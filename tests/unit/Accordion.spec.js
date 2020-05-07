@@ -30,6 +30,9 @@ describe('Accordion', () => {
       },
       scopedSlots: {
         ...scopedSlots
+      },
+      stubs: {
+        transition: false
       }
     }
 
