@@ -39,7 +39,7 @@ describe('Accordion', () => {
   it('renders 0 accordion items', async () => {
     const wrapper = shallowMount(Accordion, {})
 
-    const acccordionItems = await wrapper.findAll(AccordionItem)
+    const acccordionItems = await wrapper.findAllComponents(AccordionItem)
 
     expect(acccordionItems.length).toBe(0)
 
@@ -49,7 +49,7 @@ describe('Accordion', () => {
   it('renders accordion items', async () => {
     const wrapper = wrapperFactory()
 
-    const acccordionItems = await wrapper.findAll(AccordionItem)
+    const acccordionItems = await wrapper.findAllComponents(AccordionItem)
 
     expect(acccordionItems.length).toBe(items.length)
 
