@@ -44,8 +44,14 @@
           :items="items"
         >
           <template v-slot:toggle="{active}">
-            <font-awesome-icon v-if="active" icon="chevron-up" />
-            <font-awesome-icon v-else icon="chevron-down" />
+            <font-awesome-icon
+              v-if="active"
+              icon="chevron-up"
+            />
+            <font-awesome-icon
+              v-else
+              icon="chevron-down"
+            />
           </template>
         </Accordion>
       </section>
