@@ -19,7 +19,9 @@ jobs:
     - stage: release
       node_js: lts/*
       script:
+        - yarn test
         - yarn build
       after_success:
+        - bash <(curl -s https://codecov.io/bash)
         - yarn semantic-release
       if: branch = master
