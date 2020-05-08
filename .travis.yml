@@ -14,9 +14,7 @@ jobs:
       node_js: lts/*
       script:
         - yarn build
-      branches:
-        except:
-          - master
+      if: branch != master
 
     - stage: release
       node_js: lts/*
@@ -26,6 +24,4 @@ jobs:
       after_success:
         - bash <(curl -s https://codecov.io/bash)
         - yarn semantic-release
-      branches:
-        only:
-          - master
+      if: branch = master
