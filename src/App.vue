@@ -19,10 +19,10 @@
         <Accordion
           :items="items"
         >
-          <template v-slot:title="{index, item}">
+          <template #title="{index, item}">
             <h3>{{ index + 1 }}. {{ item.title }}</h3>
           </template>
-          <template v-slot:content="{index, item}">
+          <template #content="{index, item}">
             <span>{{ index + 1 }}.</span> {{ item.content }}
           </template>
         </Accordion>
@@ -43,7 +43,7 @@
         <Accordion
           :items="items"
         >
-          <template v-slot:toggle="{active}">
+          <template #toggle="{active}">
             <font-awesome-icon
               v-if="active"
               icon="chevron-up"
@@ -94,6 +94,8 @@ library.add(faChevronDown, faChevronUp)
 
 export default {
 
+  name: 'App',
+
   components: {
     Accordion
   },
@@ -122,8 +124,6 @@ export default {
     getItems () {
       return this.items
     }
-  },
-
-  name: 'App'
+  }
 }
 </script>

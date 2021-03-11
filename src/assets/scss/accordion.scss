@@ -23,9 +23,6 @@ $accordion-padding-v: 1rem !default;
     }
 
     &.-active {
-      .c-accordion__content {
-      }
-
       .c-accordion__title {
         background-color: $accordion-color-light;
       }
@@ -39,7 +36,12 @@ $accordion-padding-v: 1rem !default;
     cursor: pointer;
     padding: $accordion-padding-v $accordion-padding-h;
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
     }
   }

@@ -1,3 +1,9 @@
+<script>
+export default {
+  name: 'ChevronDown',
+}
+</script>
+
 <template>
   <svg
     width="1em"
@@ -13,9 +19,3 @@
     />
   </svg>
 </template>
-
-<script>
-export default {
-  name: 'ChevronDown'
-}
-</script>

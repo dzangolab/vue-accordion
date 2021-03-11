@@ -1,29 +1,38 @@
-<template>
-  <transition
-    @after-leave="onAfterLeave"
-    @enter="onEnter"
-    @leave="onLeave"
-    :duration="duration"
-    :name="name"
-  >
-    <slot />
-  </transition>
-</template>
-
 <script>
 export default {
+  name: 'CollapseTransition',
+
+  props: {
+    duration: {
+      default: 350,
+      required: false,
+      type: Number,
+    },
+
+    name: {
+      default: 'collapse',
+      required: false,
+      type: String,
+    },
+
+    transition: {
+      default: 'ease',
+      required: false,
+      type: String,
+    },
+  },
   computed: {
-    transitionStyle () {
+    transitionStyle() {
       return `height ${this.duration}ms ${this.transition}`
-    }
+    },
   },
 
   methods: {
-    computeHeight (el) {
+    computeHeight(el) {
       return el.offsetHeight + 'px'
     },
 
-    forceRepaint (el) {
+    forceRepaint(el) {
       // eslint-disable-next-line no-unused-expressions
       getComputedStyle(el).height
     },
@@ -31,13 +40,13 @@ export default {
     // after-* events are not triggered in the test so ignored this method for coverage purpose.
     // Bug in the vue-test-utils
     /* istanbul ignore next */
-    onAfterLeave (el) {
+    onAfterLeave(el) {
       el.style.overflow = null
       el.style.transition = null
       el.style.height = null
     },
 
-    onEnter (el, done) {
+    onEnter(el, done) {
       const height = this.computeHeight(el)
 
       el.style.height = '0'
@@ -54,7 +63,7 @@ export default {
       setTimeout(done, this.duration)
     },
 
-    onLeave (el, done) {
+    onLeave(el, done) {
       el.style.height = this.computeHeight(el)
       el.style.overflow = 'hidden'
 
@@ -67,29 +76,19 @@ export default {
       el.style.height = '0'
 
       setTimeout(done, this.duration)
-    }
+    },
   },
-
-  name: 'CollapseTransition',
-
-  props: {
-    duration: {
-      default: 350,
-      required: false,
-      type: Number
-    },
-
-    name: {
-      default: 'collapse',
-      required: false,
-      type: String
-    },
-
-    transition: {
-      default: 'ease',
-      required: false,
-      type: String
-    }
-  }
 }
 </script>
+
+<template>
+  <transition
+    :duration="duration"
+    :name="name"
+    @after-leave="onAfterLeave"
+    @enter="onEnter"
+    @leave="onLeave"
+  >
+    <slot />
+  </transition>
+</template>

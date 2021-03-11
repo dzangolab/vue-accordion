@@ -1,10 +1,11 @@
 module.exports = {
   env: {
+    browser: true,
+    es6: true,
     node: true
   },
   extends: [
-    '@vue/standard',
-    'plugin:vue/strongly-recommended'
+    'plugin:vue/recommended'
   ],
   overrides: [
     {
@@ -26,9 +27,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'object-curly-spacing': ['error', 'never'],
     quotes: ['error', 'single'],
-    'sort-keys': ['warn', 'asc', {
-      caseSensitive: false, natural: true
-    }],
     'vue/html-closing-bracket-newline': ['error', {
       multiline: 'always',
       singleline: 'never'
@@ -60,6 +58,9 @@ module.exports = {
     }],
     'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
     'vue/require-default-prop': ['warn'],
-    'vue/require-prop-types': ['warn']
+    'vue/require-prop-types': ['warn'],
+    'vue/sort-keys': ['warn', 'asc', {
+      'natural': true
+    }]
   }
 }
