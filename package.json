@@ -15,7 +15,8 @@
     "serve": "vue-cli-service serve",
     "test": "yarn run test:unit",
     "test:unit": "vue-cli-service test:unit",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -51,7 +52,7 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.0.1",
-    "husky": "^4.2.5",
+    "husky": "5",
     "node-sass": "^4.14.0",
     "sass-loader": "^8.0.0",
     "semantic-release": "^17.4.1",
@@ -66,12 +67,6 @@
     "*.js"
   ],
   "homepage": "https://github.com/dzangolab/vue-accordion",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
-  },
   "keywords": [
     "vuejs",
     "accordion"
