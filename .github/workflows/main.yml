@@ -28,14 +28,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 12
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn install
+      
