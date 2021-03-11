@@ -1,0 +1,14 @@
+{
+  "types": "conventional-commit-types",
+  "scope": {
+    "required": false,
+    "allowed": ["*"],
+    "validate": false,
+    "multiple": false
+  },
+  "warnOnFail": false,
+  "maxSubjectLength": 100,
+  "subjectPattern": ".+",
+  "subjectPatternErrorMsg": "Subject must be in format 'CMS-123 - Commit message'"
+  "autoFix": false
+}

@@ -10,6 +10,7 @@
   "scripts": {
     "build": "vue-cli-service build --target lib --name accordion ./src/components/Accordion/Index.vue",
     "cm": "git cz",
+    "commitmsg": "validate-commit-msg",
     "lint": "vue-cli-service lint",
     "prepublishOnly": "yarn run lint && yarn run test && yarn run build",
     "serve": "vue-cli-service serve",
@@ -27,8 +28,6 @@
     "vue": "^2.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.0",
-    "@commitlint/config-conventional": "^12.0",
     "@semantic-release/changelog": "^5.0",
     "@semantic-release/commit-analyzer": "^8.0",
     "@semantic-release/git": "^9.0",
@@ -38,7 +37,7 @@
     "@vue/cli-plugin-babel": "^4.5",
     "@vue/cli-plugin-eslint": "^4.5",
     "@vue/cli-plugin-unit-jest": "^4.5",
-    "@vue/cli-service": "^4.5", 
+    "@vue/cli-service": "^4.5",
     "@vue/test-utils": "1.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0",
@@ -55,6 +54,7 @@
     "node-sass": "^5.0",
     "sass-loader": "^10.1",
     "semantic-release": "^17.4",
+    "validate-commit-msg": "^2.14.0",
     "vue-template-compiler": "^2.6"
   },
   "bugs": "https://github.com/dzangolab/vue-accordion/issues",
