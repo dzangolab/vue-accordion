@@ -1,7 +1,8 @@
 name: Test
 
-on: [push]
-  workflow_dispatch:
+on:
+  push:
+  pull_request:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,6 +27,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node_version }}
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
       - run: yarn install
       - run: yarn test
