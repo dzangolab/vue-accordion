@@ -2,13 +2,12 @@ name: Test
 
 on:
   push:
+    branches-ignore:
+      - master
   pull_request:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  release:
-    # The type of runner that the job will run on
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,9 +15,7 @@ jobs:
           - 10
           - 12
           - 14
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
         with:
