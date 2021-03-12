@@ -1,6 +1,6 @@
 {
   "name": "@dzangolab/vue-accordion",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "An accordion component for vue.js",
   "author": {
     "name": "Olivier Pichon",
@@ -13,10 +13,10 @@
     "commitmsg": "validate-commit-msg",
     "lint": "vue-cli-service lint",
     "prepublishOnly": "yarn run lint && yarn run test && yarn run build",
-    "release": "standard-version",
     "serve": "vue-cli-service serve",
     "test": "yarn run test:unit",
     "test:unit": "vue-cli-service test:unit",
+    "semantic-release": "semantic-release",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -53,7 +53,7 @@
     "husky": "5",
     "node-sass": "^5.0",
     "sass-loader": "^10.1",
-    "standard-version": "^9.1.1",
+    "semantic-release": "^17.4",
     "validate-commit-msg": "^2.14.0",
     "vue-template-compiler": "^2.6"
   },
