@@ -10982,7 +10982,7 @@ stackframe@^1.1.1:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.1.1.tgz#ffef0a3318b1b60c3b58564989aca5660729ec71"
   integrity sha512-0PlYhdKh6AfFxRyK/v+6/k+/mMfyiEBbTM5L94D0ZytQnJ166wuwoTYLHFWGbs2dpA8Rgq763KGWmN1EQEYHRQ==
 
-standard-version@^9.1.1:
+standard-version@^9.1:
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/standard-version/-/standard-version-9.1.1.tgz#7561df6351b075a44544ce3d3ebcffcb9582ba5a"
   integrity sha512-PF9JnRauBwH7DAkmefYu1mB2Kx0MVG13udqDTFmDUiogbyikBAHBdMrVuauxtAb2YIkyZ3FMYCNv0hqUKMOPww==
@@ -11956,7 +11956,7 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.1.0.tgz#e14de37b31a6d194f5690d67efc4e7f6fc6ab30e"
   integrity sha512-usZBT3PW+LOjM25wbqIlZwPeJV+3OSz3M1k1Ws8snlW39dZyYL9lOGC5FgPVHfk0jKmjiDV8Z0mIbVQPiwFs7g==
 
-validate-commit-msg@^2.14.0:
+validate-commit-msg@^2.14:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/validate-commit-msg/-/validate-commit-msg-2.14.0.tgz#e5383691012cbb270dcc0bc2a4effebe14890eac"
   integrity sha1-5Tg2kQEsuycNzAvCpO/+vhSJDqw=
