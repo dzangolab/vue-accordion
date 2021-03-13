@@ -15,7 +15,6 @@
     "serve": "vue-cli-service serve",
     "test": "yarn run test:unit",
     "test:unit": "vue-cli-service test:unit",
-    "semantic-release": "semantic-release",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -27,12 +26,6 @@
     "vue": "^2.6"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0",
-    "@semantic-release/commit-analyzer": "^8.0",
-    "@semantic-release/git": "^9.0",
-    "@semantic-release/github": "^7.2",
-    "@semantic-release/npm": "^7.0",
-    "@semantic-release/release-notes-generator": "^9.0",
     "@vue/cli-plugin-babel": "^4.5",
     "@vue/cli-plugin-eslint": "^4.5",
     "@vue/cli-plugin-unit-jest": "^4.5",
@@ -68,10 +61,5 @@
   ],
   "license": "MIT",
   "main": "./dist/accordion.common.js",
-  "repository": "github:dzangolab/vue-accordion",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "repository": "github:dzangolab/vue-accordion"
 }
