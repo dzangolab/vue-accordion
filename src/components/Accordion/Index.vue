@@ -10,6 +10,11 @@ export default {
   },
 
   props: {
+    defaultIndex: {
+      default: 0,
+      type: Number
+    },
+
     duration: {
       default: 350,
       required: false,
@@ -36,11 +41,12 @@ export default {
   data() {
     return {
       index: 0,
-      state: [1],
+      state: [this.default],
     }
   },
 
   created() {
+    this.index = this.defaultIndex
     this.prepareComponent()
   },
 

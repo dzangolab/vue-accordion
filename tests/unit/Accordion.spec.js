@@ -59,6 +59,24 @@ describe('Accordion', () => {
     wrapper.destroy()
   })
 
+  it('opens item according to default-item prop', async () => {
+    const index = generateRandomIndex()
+
+    const props = {
+      'default-index': index
+    }
+
+    const wrapper = wrapperFactory(false, {
+      propsData: props
+    })
+
+    const item = await wrapper.find(`[data-el="item-${index}"]`)
+      
+    expect(item.classes()).toContain('-active')
+
+    wrapper.destroy()
+  })
+
   it('renders passed value in title after slot passed', async () => {
     const wrapper = wrapperFactory(false, {
       scopedSlots: {
