@@ -47,9 +47,12 @@ The Accordion is meant to be usable out of the box. Include it in your template 
 
 ## Props
 
+### `defaultIndex`
+
+Item to be shown open by default. Uses 0-based index. Default value is `0`.
 ### `items`
 
-An Array of standard javascript objects. Each item must have the following properties:
+An array of standard javascript objects. Each item must have the following properties:
 
 * `title`: the text displayed in the "trigger" element of the accordion item, i.e. the part that is always visible, even when the accordion item is collapsed.
 * `content`: the content displayed in the toggleable part of the accordion item, i.e. the part that is visible only when the accordion item is expanded.

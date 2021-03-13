@@ -14,6 +14,15 @@
       </section>
 
       <section>
+        <h2>Default item</h2>
+
+        <Accordion
+          :default-index="1"
+          :items="items"
+        />
+      </section>
+
+      <section>
         <h2>Slots</h2>
 
         <Accordion
