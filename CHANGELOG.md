@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/dzangolab/vue-accordion/compare/1.0.1...1.1.0) (2021-03-13)
+
+
+### Features
+
+* add default index prop ([3ea0b5a](https://github.com/dzangolab/vue-accordion/commit/3ea0b5a328bf9932818e82c6477cf945fb24c83f))
+
 ### [1.0.1](https://github.com/dzangolab/vue-accordion/compare/v1.0.0...v1.0.1) (2021-03-13)
 
 # 1.0.0 (2020-05-07)
