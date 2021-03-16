@@ -124,7 +124,6 @@ export default {
           content: 'some other content',
           title: 'Item 3'
         }
-
       ]
     }
   },
