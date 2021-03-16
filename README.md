@@ -11,6 +11,9 @@ An accordion component for vue.js.
 
 * vue.js
 
+## License
+
+This component is released under the MIT license. See LICENSE file for more details.
 ## Installation
 
 ### Global installation
@@ -45,92 +48,70 @@ The Accordion is meant to be usable out of the box. Include it in your template 
 />
 ```
 
-## Props
-
-### `defaultIndex`
-
-Item to be shown open by default. Uses 0-based index. Default value is `0`.
-### `items`
-
-An array of standard javascript objects. Each item must have the following properties:
-
-* `title`: the text displayed in the "trigger" element of the accordion item, i.e. the part that is always visible, even when the accordion item is collapsed.
-* `content`: the content displayed in the toggleable part of the accordion item, i.e. the part that is visible only when the accordion item is expanded.
-
-### `showToggle`
-
-A boolean indicating whether a toggle button should be displayed in the title or trigger element. Note that the whole title/trigger element is clickable, whether or not the toggle is displayed. The toggle simply acts as a visual clue to the user that the element is expandable/collapsible.
-
-Default value: `true`
-
-### `transition`
-
-Transition for opening/closing accordion item.
-
-Default value: `ease`
-
-### `duration`
-
-Duration of the transition in millisecond(ms).
-
-Default value: `350`
-
-## Customization
-
-The Accordion component is designed with minimal styling.
-
-### SCSS
-
-Instead of importing the css file in component or main.js, you can also import scss file into your app scss file.
+The `items` prop must be in the form of :
 
 ```
-@import '~@dzangolab/vue-accordion/src/assets/scss/accordion.scss';
+items: [
+  {
+    content: 'some content',
+    title: 'Item 1'
+  },
+  {
+    content: 'some more content',
+    title: 'Item 2'
+  },
+  {
+    content: 'some other content',
+    title: 'Item 3'
+  }
+]
 ```
+
+
 
 ## Slots
-vue-accordion provides scoped slots in order to customize the accordion.
 
-### Scoped Slot `content`
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| `title`   | Use this slot to customize each item's title         |
+| `toggle`  | Use this slot to customize each item's toggle button |
+| `content` | Use this slot to customize each item's content       |
 
-Customizes the content of each accordion item.
+## Props
 
+| Name            | Type      | Description                                                       | Default    |
+| --------------- | --------- | ----------------------------------------------------------------- | ---------- |
+| `default-index` | `Number`  | The item to be opened by default.                                 | `0`        |
+| `duration`      | `Number`  | The duration of the transition when an item is opened.            | `350`      |
+| `items`         | `Array`   | The list of items in the accordion.                               | `() => []` |
+| `show-toggle`   | `Boolean` | Whether the toggle button should be shown in each accordion item. | `true`     |
+| `transition`    | `String`  | The transition to use when opening an accordion item.             | `"ease"`   |
 
-```vue
-<Accordion
-  :items="items"
->
-  <template #content="{index, item}">
-    <pre>{{ item.title }}</pre>
-   </template>
-</Accordion>
+## Data
+
+| Name    | Type     | Description                               | Initial value                |
+| ------- | -------- | ----------------------------------------- | ---------------------------- |
+| `index` | `number` | The index of the currently selected item. | `value of defaultIndex prop` |
+
+## Events
+
+| Name               | Description                                                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accordion:select` | Fired when an accordion item is selected.<br/>**Arguments**<br/><ul><li>**`index: number`** — the zero-based index of the selected item.</li></ul> |
+
+## Methods
+
+### isActive()
+
+Whether the item at specified index is open.
+
+**Syntax**
+
+```typescript
+isActive(index: number): unknown
 ```
 
-### Scoped Slot `title`
+**Parameters**
 
-Customizes the title of each accordion item.
-
-```vue
-<Accordion
-  :items="items"
->
-  <template #title="{index, item}">
-    <h3>{{ index + 1 }}. {{ item.title }}</h3>
-   </template>
-</Accordion>
-```
-
-### Scoped Slot `toggle`
-
-Customizes the icon of the toggle button.
-
-
-```vue
-<Accordion
-  :items="items"
->
-  <template #toggle="{active}">
-    <button v-if="active">collapse</button>
-    <button v-else>expand</button>
-   </template>
-</Accordion>
-```
+- `index: number`<br/>
+  the index of the element to be checked
