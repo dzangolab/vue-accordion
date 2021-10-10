@@ -19,17 +19,16 @@
     "test:unit": "vue-cli-service test:unit",
     "prepare": "husky install"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2",
-    "@fortawesome/free-solid-svg-icons": "^5.15",
-    "@fortawesome/vue-fontawesome": "^2.0",
-    "bootstrap": "^5.1",
+  "peerDependencies": {
     "core-js": "^3.18",
     "vue": "^2.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2",
     "@commitlint/config-conventional": "^13.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15",
+    "@fortawesome/vue-fontawesome": "^2.0",
     "@vue/cli-plugin-babel": "^4.5",
     "@vue/cli-plugin-eslint": "^4.5",
     "@vue/cli-plugin-unit-jest": "^4.5",
@@ -40,6 +39,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0",
     "babel-jest": "^27.2",
+    "bootstrap": "^5.1",
     "eslint": "^8.0",
     "eslint-plugin-import": "^2.24",
     "eslint-plugin-node": "^11.1",
@@ -50,6 +50,7 @@
     "node-sass": "^6.0",
     "sass-loader": "^10",
     "standard-version": "^9.3",
+    "vue": "^2.6",
     "vue-template-compiler": "^2.6"
   },
   "bugs": "https://github.com/dzangolab/vue-accordion/issues",
