@@ -20,7 +20,6 @@
     "prepare": "husky install"
   },
   "peerDependencies": {
-    "core-js": "^3.18",
     "vue": "^2.6"
   },
   "devDependencies": {
