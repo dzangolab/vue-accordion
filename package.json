@@ -23,7 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2",
     "@fortawesome/free-solid-svg-icons": "^5.15",
     "@fortawesome/vue-fontawesome": "^2.0",
-    "bootstrap": "^4.6",
+    "bootstrap": "^5.1",
     "core-js": "^3.18",
     "vue": "^2.6"
   },
@@ -46,8 +46,8 @@
     "eslint-plugin-promise": "^5.1",
     "eslint-plugin-standard": "^5.0",
     "eslint-plugin-vue": "^7.19",
-    "husky": "7.0.2",
-    "node-sass": "^6.0.1",
+    "husky": "7.0",
+    "node-sass": "^6.0",
     "sass-loader": "^10",
     "standard-version": "^9.3",
     "vue-template-compiler": "^2.6"
