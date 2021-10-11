@@ -95,8 +95,8 @@
 </template>
 
 <script>
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Accordion from './components/Accordion/Index'
 
 library.add(faChevronDown, faChevronUp)
