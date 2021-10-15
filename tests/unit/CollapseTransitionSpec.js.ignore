@@ -1,5 +1,5 @@
 import {mount, shallowMount} from '@vue/test-utils'
-import CollapseTransition from '@/components/Accordion/CollapseTransition'
+import CollapseTransition from '@/components/CollapseTransition'
 
 describe('CollapseTransition', () => {
   const params = {

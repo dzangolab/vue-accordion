@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import AccordionItem from '@/components/Accordion/Item'
+import AccordionItem from '@/components/Item'
 
 describe('AccordionItem', () => {
   const title = 'title'

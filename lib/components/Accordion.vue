@@ -1,10 +1,8 @@
 <script>
 import Item from './Item'
 
-import '@/assets/scss/accordion.scss'
-
 /**
- * Accordion component vor vue.js.
+ * Accordion component for vue.js.
  * 
  * @author Dzango Technologies Limited
  * @license MIT
@@ -150,7 +148,7 @@ data() {
       </template>
 
       <template #content>
-        <!-- Use this lsot to customize each item's content -->
+        <!-- Use this slot to customize each item's content -->
         <slot
           name="content"
           :index="key"

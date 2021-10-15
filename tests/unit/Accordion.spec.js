@@ -1,6 +1,6 @@
 import {mount, shallowMount} from '@vue/test-utils'
-import Accordion from '@/components/Accordion/Index'
-import AccordionItem from '@/components/Accordion/Item'
+import Accordion from '@/components/Accordion'
+import AccordionItem from '@/components/Item'
 
 describe('Accordion', () => {
   const items = [

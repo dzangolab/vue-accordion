@@ -1,26 +1,39 @@
 {
   "name": "@dzangolab/vue-accordion",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "description": "An accordion component for vue.js (vue3)",
+  "keywords": [
+    "vuejs",
+    "accordion"
+  ],
+  "homepage": "https://github.com/dzangolab/vue-accordion",
+  "bugs": "https://github.com/dzangolab/vue-accordion/issues",
+  "repository": "github:dzangolab/vue-accordion",
+  "license": "MIT",
   "author": {
     "name": "Olivier Pichon",
     "email": "info@dzango.com",
     "url": "https://github.com/opichon"
   },
+  "main": "./dist/accordion.common.js",
+  "files": [
+    "dist/*",
+    "lib/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
-    "build": "vue-cli-service build --target lib --name accordion ./src/components/Accordion/Index.vue",
+    "build": "vue-cli-service build --target lib --name accordion ./lib/index.js",
     "commitlint": "commitlint --edit $1",
     "lint": "vue-cli-service lint",
+    "prepare": "husky install",
+    "prepublishOnly": "npx sort-package-json && yarn run lint && yarn run test && yarn run build",
     "prerelease": "yarn run test",
-    "prepublishOnly": "yarn run lint && yarn run test && yarn run build",
     "release": "standard-version",
     "serve": "vue-cli-service serve",
     "test": "yarn run test:unit",
-    "test:unit": "vue-cli-service test:unit",
-    "prepare": "husky install"
-  },
-  "peerDependencies": {
-    "vue": ">= 3.0.0"
+    "test:unit": "vue-cli-service test:unit"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2",
@@ -34,7 +47,6 @@
     "@vue/cli-service": "^4.5",
     "@vue/compiler-sfc": "^3.2.20",
     "@vue/test-utils": "2.0.0-rc.15",
-    "@vuedoc/md": "^3.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0",
     "babel-jest": "^26.0",
@@ -44,7 +56,6 @@
     "eslint-plugin-import": "^2.22",
     "eslint-plugin-node": "^11.1",
     "eslint-plugin-promise": "^5.1",
-    "eslint-plugin-standard": "^5.0",
     "eslint-plugin-vue": "^7.7",
     "husky": "7.0",
     "node-sass": "^6.0",
@@ -53,20 +64,7 @@
     "vue": "^3.2.20",
     "vue-jest": "^5.0.0-0"
   },
-  "bugs": "https://github.com/dzangolab/vue-accordion/issues",
-  "files": [
-    "dist/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
-  ],
-  "homepage": "https://github.com/dzangolab/vue-accordion",
-  "keywords": [
-    "vuejs",
-    "accordion"
-  ],
-  "license": "MIT",
-  "main": "./dist/accordion.common.js",
-  "repository": "github:dzangolab/vue-accordion"
+  "peerDependencies": {
+    "vue": ">= 3.0.0"
+  }
 }

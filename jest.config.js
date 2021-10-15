@@ -4,8 +4,8 @@ module.exports = {
     global: {
       branches: 100,
       functions: 61,
-      lines: 58,
-      statements: 58
+      lines: 56,
+      statements: 56
     }
   },
   moduleFileExtensions: [
@@ -15,7 +15,7 @@ module.exports = {
     'vue'
   ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/lib/$1'
   },
   snapshotSerializers: [
     'jest-serializer-vue'
