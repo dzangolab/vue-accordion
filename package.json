@@ -8,20 +8,24 @@
   ],
   "homepage": "https://github.com/dzangolab/vue-accordion",
   "bugs": "https://github.com/dzangolab/vue-accordion/issues",
-  "repository": "github:dzangolab/vue-accordion",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzangolab/vue-accordion.git"
+  },
   "license": "MIT",
   "author": {
-    "name": "Olivier Pichon",
+    "name": "Dzango Technologies Limited",
     "email": "info@dzango.com",
-    "url": "https://github.com/opichon"
+    "url": "https://www.dzangolab.com"
   },
   "main": "./dist/accordion.common.js",
   "files": [
+    "*.js",
+    "*.json",
+    "*.ts",
     "dist/*",
     "lib/*",
-    "public/*",
-    "*.json",
-    "*.js"
+    "public/*"
   ],
   "scripts": {
     "build": "vue-cli-service build --target lib --name accordion ./lib/index.js",
