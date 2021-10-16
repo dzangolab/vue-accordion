@@ -1,6 +1,6 @@
 {
   "name": "@dzangolab/vue-accordion",
-  "version": "2.0.0-rc.3",
+  "version": "2.0.0-rc.4",
   "description": "An accordion component for vue.js (vue3)",
   "keywords": [
     "vuejs",
@@ -51,7 +51,6 @@
     "@vue/cli-service": "^4.5",
     "@vue/compiler-sfc": "^3.2.20",
     "@vue/test-utils": "2.0.0-rc.15",
-    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0",
     "babel-jest": "^26.0",
     "bootstrap": "^5.1",
@@ -69,6 +68,6 @@
     "vue-jest": "^5.0"
   },
   "peerDependencies": {
-    "vue": ">= 3.0.0"
+    "vue": ">= 3.0"
   }
 }
