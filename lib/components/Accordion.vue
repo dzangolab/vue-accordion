@@ -1,5 +1,6 @@
 <script>
 import Item from './Item'
+import '../assets/accordion.scss'
 
 /**
  * Accordion component for vue.js.
