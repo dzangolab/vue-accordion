@@ -2,7 +2,10 @@
   "name": "@dzangolab/vue-accordion",
   "version": "2.0.0",
   "description": "An accordion component for vue.js (vue3)",
-  "keywords": ["vuejs", "accordion"],
+  "keywords": [
+    "vuejs",
+    "accordion"
+  ],
   "homepage": "https://github.com/dzangolab/vue-accordion",
   "bugs": "https://github.com/dzangolab/vue-accordion/issues",
   "repository": {
@@ -16,7 +19,14 @@
     "url": "https://www.dzangolab.com"
   },
   "main": "./dist/accordion.common.js",
-  "files": ["*.js", "*.json", "*.ts", "dist/*", "lib/*", "public/*"],
+  "files": [
+    "*.js",
+    "*.json",
+    "*.ts",
+    "dist/*",
+    "lib/*",
+    "public/*"
+  ],
   "scripts": {
     "build": "vue-cli-service build --target lib --name accordion ./lib/index.js",
     "commitlint": "commitlint --edit $1",
@@ -24,10 +34,14 @@
     "prepare": "husky install",
     "prepublishOnly": "npx sort-package-json && yarn run lint && yarn run test && yarn run build",
     "prerelease": "yarn run test",
+    "release": "shipjs prepare",
     "serve": "vue-cli-service serve",
+    "sort-package": "npx sort-package-json",
     "test": "yarn run test:unit",
-    "test:unit": "vue-cli-service test:unit",
-    "release": "shipjs prepare"
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "sass": "^1.47.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.0.1",
@@ -51,7 +65,6 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-vue": "7.19.1",
     "husky": "7.0.4",
-    "node-sass": "7.0.1",
     "sass-loader": "^10, < 11",
     "shipjs": "0.24.1",
     "vue": "3.2.20",
