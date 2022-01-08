@@ -1,3 +1,7 @@
+## [2.0.2](https://github.com/dzangolab/vue-accordion/compare/v2.0.0...v2.0.2) (2022-01-08)
+
+
+
 ## [2.0.1](https://github.com/dzangolab/vue-accordion/compare/v2.0.0...v2.0.1) (2022-01-08)
 
 

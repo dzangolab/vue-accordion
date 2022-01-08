@@ -1,8 +1,11 @@
 {
   "name": "@dzangolab/vue-accordion",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An accordion component for vue.js (vue3)",
-  "keywords": ["vuejs", "accordion"],
+  "keywords": [
+    "vuejs",
+    "accordion"
+  ],
   "homepage": "https://github.com/dzangolab/vue-accordion",
   "bugs": "https://github.com/dzangolab/vue-accordion/issues",
   "repository": {
@@ -16,7 +19,14 @@
     "url": "https://www.dzangolab.com"
   },
   "main": "./dist/accordion.common.js",
-  "files": ["*.js", "*.json", "*.ts", "dist/*", "lib/*", "public/*"],
+  "files": [
+    "*.js",
+    "*.json",
+    "*.ts",
+    "dist/*",
+    "lib/*",
+    "public/*"
+  ],
   "scripts": {
     "build": "vue-cli-service build --target lib --name accordion ./lib/index.js",
     "commitlint": "commitlint --edit $1",
