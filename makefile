@@ -18,6 +18,10 @@ run:
 	@printf "\033[0;32m>>> Running local server\033[0m\n"
 	yarn serve
 
+ship:
+	@printf "\033[0;32m>>> Prepare for shipping\033[0m\n"
+	shipjs prepare
+
 test:
 	@printf "\033[0;32m>>> Running tests\033[0m\n"
 	yarn run test
