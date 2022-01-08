@@ -1,0 +1,36 @@
+import {mount, shallowMount} from '@vue/test-utils'
+import CollapseTransition from '@/components/CollapseTransition'
+
+describe('CollapseTransition', () => {
+  const params = {
+    duration: 5,
+    name: 'collapse',
+    transition: 'ease'
+  }
+
+  const wrapperFactory = ({props, slots} = {}) => {
+    const options = {
+      props: {
+        params,
+        ...props
+      },
+      slots: slots,
+      stubs: {
+        transition: false
+      }
+    }
+
+    return mount(CollapseTransition, options)
+  }
+
+
+  it('computes the transition style', async () => {
+    const wrapper = wrapperFactory()
+
+    const acccordionItems = wrapper.findAllComponents(AccordionItem)
+
+    expect(acccordionItems.length).toBe(0)
+
+    wrapper.unmount()
+  })
+}

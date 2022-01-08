@@ -1,10 +1,9 @@
 <script>
 import Item from './Item'
-
-import '@/assets/scss/accordion.scss'
+import '../assets/accordion.scss'
 
 /**
- * Accordion component vor vue.js.
+ * Accordion component for vue.js.
  * 
  * @author Dzango Technologies Limited
  * @license MIT
@@ -60,7 +59,7 @@ export default {
     },
   },
 
-data() {
+  data() {
     return {
 
       /**
@@ -136,7 +135,7 @@ data() {
       @item:select="onItemSelect"
     >
       <template #title>
-        <!-- Use this lsot to customize each item's title -->
+        <!-- Use this slot to customize each item's title -->
         <slot
           name="title"
           :index="key"
@@ -145,12 +144,12 @@ data() {
       </template>
 
       <template #toggle>
-        <!-- Use this lsot to customize each item's toggle button -->
+        <!-- Use this slot to customize each item's toggle button -->
         <slot name="toggle" :active="isActive(key)" />
       </template>
 
       <template #content>
-        <!-- Use this lsot to customize each item's content -->
+        <!-- Use this slot to customize each item's content -->
         <slot
           name="content"
           :index="key"

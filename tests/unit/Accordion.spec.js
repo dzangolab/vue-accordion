@@ -1,6 +1,6 @@
 import {mount, shallowMount} from '@vue/test-utils'
-import Accordion from '@/components/Accordion/Index'
-import AccordionItem from '@/components/Accordion/Item'
+import Accordion from '@/components/Accordion'
+import AccordionItem from '@/components/Item'
 
 describe('Accordion', () => {
   const items = [
@@ -22,31 +22,30 @@ describe('Accordion', () => {
     return Math.floor(Math.random() * items.length)
   }
 
-  const wrapperFactory = (shallow = true, {propsData, scopedSlots} = {}) => {
+  const wrapperFactory = (shallow = true, {propsData, slots} = {}) => {
     const options = {
-      propsData: {
+      props: {
         items,
         ...propsData
       },
-      scopedSlots: {
-        ...scopedSlots
-      },
+      shallow: shallow,
+      slots: slots,
       stubs: {
         transition: false
       }
     }
 
-    return shallow ? shallowMount(Accordion, options) : mount(Accordion, options)
+    return mount(Accordion, options)
   }
 
   it('renders 0 accordion items', async () => {
     const wrapper = shallowMount(Accordion, {})
 
-    const acccordionItems = await wrapper.findAllComponents(AccordionItem)
+    const acccordionItems = wrapper.findAllComponents(AccordionItem)
 
     expect(acccordionItems.length).toBe(0)
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
   it('renders accordion items', async () => {
@@ -56,7 +55,7 @@ describe('Accordion', () => {
 
     expect(acccordionItems.length).toBe(items.length)
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
   it('opens item according to default-item prop', async () => {
@@ -70,43 +69,45 @@ describe('Accordion', () => {
       propsData: props
     })
 
-    const item = await wrapper.find(`[data-el="item-${index}"]`)
+    const item = wrapper.find(`[data-el="item-${index}"]`)
       
     expect(item.classes()).toContain('-active')
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
-  it('renders passed value in title after slot passed', async () => {
+  it('renders title slot', async () => {
     const wrapper = wrapperFactory(false, {
-      scopedSlots: {
-        title: '<template><h3>{{ props.index + 1 }}. {{ props.item.title }}</h3></template>'
+      propsData: {},
+      slots: {
+        title: '<template v-slot:title="params"><h3>{{ params.index + 1 }}. {{ params.item.title }}</h3></template>'
       }
     })
 
     const index = generateRandomIndex()
 
-    const title = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="title"]')
+    const title = wrapper.find(`[data-el="item-${index}"]`).find('[data-el="title"]')
 
     expect(title.html()).toContain(`<h3>${index + 1}. ${items[index].title}</h3>`)
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
-  it('renders passed value in content after slot passed', async () => {
+  it('renders content slot', async () => {
     const wrapper = wrapperFactory(false, {
-      scopedSlots: {
-        content: '<template><div>{{ props.index + 1 }}. {{ props.item.content }}</div></template>'
+      props: {},
+      slots: {
+        content: '<template v-slot:content="params"><div>{{ params.index + 1 }}. {{ params.item.content }}</div></template>'
       }
     })
 
     const index = generateRandomIndex()
 
-    const content = await wrapper.find(`[data-el="item-${index}"]`).find('[data-el="content"]')
+    const content = wrapper.find(`[data-el="item-${index}"]`).find('[data-el="content"]')
 
     expect(content.html()).toContain(`<div>${index + 1}. ${items[index].content}</div>`)
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
   it('emits accordion:select event on click accordion item', async () => {
@@ -120,7 +121,7 @@ describe('Accordion', () => {
 
     expect(wrapper.emitted('accordion:select')).toBeTruthy()
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 
   it('toggles first item', async () => {
@@ -141,6 +142,6 @@ describe('Accordion', () => {
 
     expect(event[1]).toEqual([0])
 
-    wrapper.destroy()
+    wrapper.unmount()
   })
 })
