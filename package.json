@@ -40,9 +40,6 @@
     "test": "yarn run test:unit",
     "test:unit": "vue-cli-service test:unit"
   },
-  "dependencies": {
-    "sass": "^1.47.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "16.0.1",
     "@commitlint/config-conventional": "16.0.0",
@@ -65,6 +62,7 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-vue": "8.2.0",
     "husky": "7.0.4",
+    "sass": "^1.47.0",
     "sass-loader": "12.4.0",
     "shipjs": "0.24.1",
     "vue": "3.2.26",
