@@ -41,7 +41,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.0.1",
+    "@commitlint/cli": "16.0.2",
     "@commitlint/config-conventional": "16.0.0",
     "@fortawesome/fontawesome-svg-core": "1.2.36",
     "@fortawesome/free-solid-svg-icons": "5.15.4",
