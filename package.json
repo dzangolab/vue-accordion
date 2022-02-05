@@ -64,7 +64,7 @@
     "husky": "7.0.4",
     "sass": "1.49.7",
     "sass-loader": "10.2.1",
-    "shipjs": "0.24.1",
+    "shipjs": "0.24.2",
     "vue": "3.2.29",
     "vue-jest": "5.0.0-alpha.10"
   },
