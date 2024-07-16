@@ -43,8 +43,8 @@
   "devDependencies": {
     "@commitlint/cli": "16.1.0",
     "@commitlint/config-conventional": "16.0.0",
-    "@fortawesome/fontawesome-svg-core": "1.2.36",
-    "@fortawesome/free-solid-svg-icons": "5.15.4",
+    "@fortawesome/fontawesome-svg-core": "6.6.0",
+    "@fortawesome/free-solid-svg-icons": "6.6.0",
     "@fortawesome/vue-fontawesome": "3.0.0-5",
     "@vue/cli-plugin-babel": "4.5.15",
     "@vue/cli-plugin-eslint": "4.5.15",
